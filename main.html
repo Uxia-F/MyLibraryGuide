@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Biblioteca Personal</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>📚 Mi Biblioteca</h1>
+      <div class="counter-card" id="rewardCounter">Cargando regla de lectura...</div>
+    </header>
+
+    <div class="controls">
+      <div class="tabs">
+        <button class="active" onclick="filterStatus('todos', this)">Todos</button>
+        <button onclick="filterStatus('leido', this)">Leídos</button>
+        <button onclick="filterStatus('en_progreso', this)">En progreso</button>
+        <button onclick="filterStatus('sin_leer', this)">Sin leer</button>
+      </div>
+
+      <div class="search-box">
+        <input type="text" id="apiSearch" class="search-bar" placeholder="Buscar por título en Google Books para añadir...">
+        <button onclick="searchGoogleBooks()" class="btn-add">Añadir Libro</button>
+      </div>
+    </div>
+
+    <div id="bookGrid" class="grid"></div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+</html>
