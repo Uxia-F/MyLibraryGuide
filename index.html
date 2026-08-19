@@ -11,7 +11,10 @@
   <div class="container">
     <header>
       <h1>📚 Mi Biblioteca</h1>
-      <div class="counter-card" id="rewardCounter">Cargando regla de lectura...</div>
+      <div class="counter-container">
+        <div class="counter-card" id="rewardCounter">Cargando...</div>
+        <button id="btnRedeem" class="btn-redeem" onclick="redeemCredit()" style="display: none;">🎁 Gastar 1 crédito</button>
+      </div>
     </header>
 
     <div class="controls">
@@ -22,7 +25,18 @@
         <button onclick="filterStatus('sin_leer', this)">Sin leer</button>
       </div>
 
-      <button onclick="addManualBook()" class="btn-add">➕ Añadir Libro</button>
+      <div class="filter-tag-box">
+        <select id="tagFilter" class="select-tag-filter" onchange="filterTag(this.value)">
+          <option value="todas">🏷️ Todas las etiquetas</option>
+        </select>
+      </div>
+
+      <button id="btnToggleHidden" class="btn-toggle-hidden" onclick="toggleShowHidden()">👁️ Mostrar contenido oculto</button>
+
+      <div class="search-box">
+        <input type="text" id="localSearch" class="search-bar" placeholder="Buscar en mi biblioteca..." oninput="renderGrid()">
+        <button onclick="addManualBook()" class="btn-add">➕ Añadir Libro</button>
+      </div>
     </div>
 
     <div id="bookGrid" class="grid"></div>
