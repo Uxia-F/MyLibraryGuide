@@ -62,10 +62,10 @@ function toggleShowHidden() {
   const btn = document.getElementById('btnToggleHidden');
   if (showHidden) {
     btn.classList.add('active');
-    btn.textContent = '🙈 Ocultar contenido oculto';
+    btn.textContent = 'Ocultar contenido oculto';
   } else {
     btn.classList.remove('active');
-    btn.textContent = '👁️ Mostrar contenido oculto';
+    btn.textContent = 'Mostrar contenido oculto';
   }
   renderGrid();
 }
@@ -118,7 +118,7 @@ function renderGrid() {
           <div class="badges-wrapper">
             <span class="badge badge-${book.status}">${book.status.replace('_', ' ')}</span>
             ${book.tag ? `<span class="badge badge-custom-tag">🏷️ ${book.tag}</span>` : ''}
-            ${book.hidden ? `<span class="badge badge-hidden-tag">🙈 Oculto</span>` : ''}
+            ${book.hidden ? `<span class="badge badge-hidden-tag">Oculto</span>` : ''}
           </div>
           <h3 class="book-title">${book.title}</h3>
           ${book.rating ? `<div class="rating-stars">${'★'.repeat(book.rating)}${'☆'.repeat(5-book.rating)}</div>` : ''}
@@ -134,7 +134,7 @@ function renderGrid() {
           <div class="card-actions">
             <button class="btn-action btn-edit" onclick="editBook('${book.id}')">✏️ Editar</button>
             <button class="btn-action btn-hide-toggle" onclick="toggleHideBook('${book.id}')">
-              ${book.hidden ? '👁️ Desocultar' : '🙈 Ocultar'}
+              ${book.hidden ? 'Desocultar' : 'Ocultar'}
             </button>
             <button class="btn-action btn-delete" onclick="deleteBook('${book.id}')">🗑️ Borrar</button>
           </div>
