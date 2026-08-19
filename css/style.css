@@ -1,84 +1,174 @@
-
-:root {
-    --primary: #2563eb;
-    --bg: #f8fafc;
-    --card: #ffffff;
-    --text: #0f172a;
+:root { 
+  --primary: #2563eb; 
+  --bg: #f8fafc; 
+  --card: #ffffff; 
+  --text: #0f172a; 
 }
 
 body { 
-    font-family: system-ui, -apple-system, sans-serif; 
-    background: var(--bg); 
-    color: var(--text); 
-    margin: 0; padding: 20px; 
+  font-family: system-ui, -apple-system, sans-serif; 
+  background: var(--bg); 
+  color: var(--text); 
+  margin: 0; 
+  padding: 20px; 
 }
 
-.container {
-     max-width: 1100px; 
-     margin: 0 auto; 
+.container { 
+  max-width: 1100px; 
+  margin: 0 auto; 
 }
 
 header { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    margin-bottom: 24px; 
-    flex-wrap: wrap; 
-    gap: 12px; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin-bottom: 24px; 
+  flex-wrap: wrap; 
+  gap: 12px; 
 }
 
 h1 { 
-    margin: 0; 
-    font-size: 1.8rem; 
+  margin: 0; 
+  font-size: 1.8rem; 
 }
 
-/* Contador de recompensas */
 .counter-card { 
-    background: #dbeafe; 
-    color: #1e40af; 
-    border: 1px solid #bfdbfe; 
-    padding: 12px 20px; 
-    border-radius: 8px; 
-    font-weight: 600; 
-    font-size: 0.95rem; 
+  background: #dbeafe; 
+  color: #1e40af; 
+  border: 1px solid #bfdbfe; 
+  padding: 12px 20px; 
+  border-radius: 8px; 
+  font-weight: 600; 
+  font-size: 0.95rem; 
 }
 
-/* Controles y Búsqueda */
-.controls { display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; align-items: center; }
+.controls { 
+  display: flex; 
+  justify-content: space-between;
+  gap: 12px; 
+  margin-bottom: 24px; 
+  flex-wrap: wrap; 
+  align-items: center; 
+}
 
-.tabs { display: flex; gap: 6px; }
+.tabs { 
+  display: flex; 
+  gap: 6px; 
+}
 
-.tabs button { padding: 8px 16px; border: 1px solid #cbd5e1; background: white; cursor: pointer; border-radius: 6px; font-weight: 500; transition: all 0.2s; }
+.tabs button { 
+  padding: 8px 16px; 
+  border: 1px solid #cbd5e1; 
+  background: white; 
+  cursor: pointer; 
+  border-radius: 6px; 
+  font-weight: 500; 
+  transition: all 0.2s; 
+}
 
-.tabs button.active { background: var(--primary); color: white; border-color: var(--primary); }
+.tabs button.active { 
+  background: var(--primary); 
+  color: white; 
+  border-color: var(--primary); 
+}
 
-.search-box { display: flex; gap: 8px; flex-grow: 1; min-width: 280px; }
+.btn-add { 
+  padding: 10px 20px; 
+  background: #10b981; 
+  color: white; 
+  border: none; 
+  border-radius: 6px; 
+  cursor: pointer; 
+  font-weight: 600; 
+  font-size: 0.95rem;
+}
 
-.search-bar { flex-grow: 1; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.95rem; }
+.grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); 
+  gap: 20px; 
+}
 
-.btn-add { padding: 8px 16px; background: #10b981; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: 600; }
+.book-card { 
+  background: var(--card); 
+  border: 1px solid #e2e8f0; 
+  border-radius: 8px; 
+  overflow: hidden; 
+  display: flex; 
+  flex-direction: column; 
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05); 
+}
 
-/* Grid de Libros */
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 20px; }
+.book-cover { 
+  width: 100%; 
+  height: 250px; 
+  object-fit: cover; 
+  background: #e2e8f0; 
+}
 
-.book-card { background: var(--card); border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+.book-info { 
+  padding: 12px; 
+  flex-grow: 1; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; 
+}
 
-.book-cover { width: 100%; height: 250px; object-fit: cover; background: #e2e8f0; }
+.book-title { 
+  font-size: 0.95rem; 
+  font-weight: bold; 
+  margin: 0 0 6px 0; 
+  color: #0f172a; 
+  line-height: 1.3; 
+}
 
-.book-info { padding: 12px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-
-.book-title { font-size: 0.95rem; font-weight: bold; margin: 0 0 6px 0; color: #0f172a; line-height: 1.3; }
-
-.badge { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; width: fit-content; text-transform: capitalize; margin-bottom: 6px; }
+.badge { 
+  display: inline-block; 
+  padding: 3px 8px; 
+  border-radius: 4px; 
+  font-size: 0.75rem; 
+  font-weight: bold; 
+  width: fit-content; 
+  text-transform: capitalize; 
+  margin-bottom: 6px; 
+}
 
 .badge-leido { background: #dcfce7; color: #15803d; }
-
 .badge-en_progreso { background: #fef9c3; color: #a16207; }
-
 .badge-sin_leer { background: #fee2e2; color: #b91c1c; }
 
 .rating-stars { color: #f59e0b; font-size: 0.85rem; margin-top: 4px; }
-
 .date-text { font-size: 0.75rem; color: #64748b; margin-top: 2px; }
 
-select.status-select { margin-top: 12px; width: 100%; padding: 6px; border-radius: 4px; border: 1px solid #cbd5e1; background: #f8fafc; font-size: 0.85rem; cursor: pointer; }
+select.status-select { 
+  margin-top: 12px; 
+  width: 100%; 
+  padding: 6px; 
+  border-radius: 4px; 
+  border: 1px solid #cbd5e1; 
+  background: #f8fafc; 
+  font-size: 0.85rem; 
+  cursor: pointer; 
+}
+
+/* Acciones del libro (Editar / Eliminar) */
+.card-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.btn-action {
+  flex: 1;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  background: #ffffff;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-edit:hover { background: #e2e8f0; }
+.btn-delete { color: #ef4444; border-color: #fca5a5; }
+.btn-delete:hover { background: #fee2e2; }
